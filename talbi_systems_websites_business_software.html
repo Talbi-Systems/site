@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talbi Systems | Websites & Small Business Systems</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        slate: {
+                            850: '#172033',
+                            900: '#0f172a',
+                            950: '#090d16',
+                        },
+                        brand: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            400: '#818cf8',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans antialiased selection:bg-brand-600 selection:text-white flex flex-col min-h-screen overflow-x-hidden">
+
+    <!-- Top Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-slate-950/95 backdrop-blur-md border-b border-slate-800/80 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <!-- Brand Logo -->
+                <a href="#home" data-route="home" class="nav-link flex items-center gap-3 group focus:outline-none">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-500 to-blue-600 flex items-center justify-center shadow-lg shadow-brand-500/25 group-hover:scale-105 transition-transform duration-200">
+                        <!-- Custom SVG Geometric Logo -->
+                        <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M12 7v11m-5-5h10" />
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="font-bold text-lg sm:text-xl tracking-tight text-white">Talbi</span>
+                        <span class="font-medium text-lg sm:text-xl tracking-tight text-brand-400">Systems</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-2" aria-label="Main Navigation">
+                    <a href="#home" data-route="home" class="nav-link nav-item px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 text-slate-300 hover:text-white hover:bg-slate-800/70">
+                        Home
+                    </a>
+                    <a href="#websites" data-route="websites" class="nav-link nav-item px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 text-slate-300 hover:text-white hover:bg-slate-800/70">
+                        Websites
+                    </a>
+                    <a href="#systems" data-route="systems" class="nav-link nav-item px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 text-slate-300 hover:text-white hover:bg-slate-800/70">
+                        Small Systems
+                    </a>
+                    <a href="#contact" data-route="contact" class="nav-link nav-item ml-2 px-5 py-2.5 rounded-xl text-sm font-semibold bg-brand-600 hover:bg-brand-500 text-white shadow-md shadow-brand-600/20 transition-all duration-200">
+                        Contact Us
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Toggle Button -->
+                <div class="flex md:hidden">
+                    <button id="mobile-menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" class="p-3 rounded-xl text-slate-300 hover:text-white hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-500 transition-colors">
+                        <span class="sr-only">Open main menu</span>
+                        <svg id="menu-icon-open" class="h-6 w-6 block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg id="menu-icon-close" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 px-4 pt-2 pb-5 space-y-1.5">
+            <a href="#home" data-route="home" class="nav-link mobile-nav-item block px-4 py-3 rounded-xl text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-colors">
+                Home
+            </a>
+            <a href="#websites" data-route="websites" class="nav-link mobile-nav-item block px-4 py-3 rounded-xl text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-colors">
+                Websites
+            </a>
+            <a href="#systems" data-route="systems" class="nav-link mobile-nav-item block px-4 py-3 rounded-xl text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800 transition-colors">
+                Small Systems
+            </a>
+            <a href="#contact" data-route="contact" class="nav-link mobile-nav-item block px-4 py-3 rounded-xl text-base font-semibold bg-brand-600 text-white text-center mt-3 shadow-md">
+                Contact Us
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Page Container -->
+    <main id="app-content" class="flex-grow transition-opacity duration-300 ease-in-out">
+
+        <!-- =====================================================================
+             PAGE 1: HOME
+        ====================================================================== -->
+        <section id="page-home" class="page-view block">
+            <!-- Hero Section -->
+            <div class="relative bg-slate-950 text-white overflow-hidden">
+                <!-- Subtle Decorative Background Grid & Glow -->
+                <div class="absolute inset-0 bg-[radial-gradient(#1e293b_1px,transparent_1px)] [background-size:24px_24px] opacity-40"></div>
+                <div class="absolute -top-24 -right-24 w-96 h-96 bg-brand-600/20 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute bottom-0 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-32">
+                    <div class="max-w-3xl">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-slate-800 text-brand-400 text-xs sm:text-sm font-medium mb-6 shadow-sm">
+                            <span class="w-2 h-2 rounded-full bg-brand-400 animate-pulse"></span>
+                            Digital Engineering for Growing Businesses
+                        </div>
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-white mb-6">
+                            Modern websites and tailored <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-blue-400">small business systems</span> built to streamline your operations.
+                        </h1>
+                        <p class="text-lg sm:text-xl text-slate-300 leading-relaxed mb-10 max-w-2xl">
+                            At <strong class="text-white font-semibold">Talbi Systems</strong>, we replace clunky spreadsheets and outdated web pages with fast, intuitive digital tools engineered specifically for how your business works.
+                        </p>
+
+                        <!-- Hero CTA Buttons -->
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="#websites" data-route="websites" class="nav-link inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold text-base shadow-lg shadow-brand-600/25 transition-all duration-200">
+                                Explore Websites
+                                <svg class="w-5 h-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                                </svg>
+                            </a>
+                            <a href="#systems" data-route="systems" class="nav-link inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white border border-slate-700 font-semibold text-base transition-all duration-200">
+                                Explore Small Systems
+                            </a>
+                            <a href="#contact" data-route="contact" class="nav-link inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-transparent hover:bg-slate-900 text-slate-300 hover:text-white border border-slate-700/80 font-medium text-base transition-all duration-200">
+                                Get in Touch
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Two Pillars Overview Section -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+                <div class="text-center max-w-2xl mx-auto mb-14">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight mb-4">Two Focused Solutions. Zero Bloat.</h2>
+                    <p class="text-slate-600 text-base sm:text-lg">
+                        We specialize in high-impact web presence and lightweight operational software so you only pay for what moves your business forward.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Pillar 1 Card: Websites -->
+                    <div class="bg-white rounded-2xl p-8 sm:p-10 border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-brand-200 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center mb-6">
+                                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-slate-900 mb-3">Custom Business Websites</h3>
+                            <p class="text-slate-600 leading-relaxed mb-6">
+                                Fast, mobile-first websites designed to turn visitors into customers. From sleek company landing pages to full service catalogs and online stores.
+                            </p>
+                            <ul class="space-y-2.5 text-sm text-slate-700 mb-8">
+                                <li class="flex items-center gap-2.5">
+                                    <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs font-bold">✓</span>
+                                    Responsive mobile & desktop layouts
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs font-bold">✓</span>
+                                    Search engine (SEO) & speed optimization
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs font-bold">✓</span>
+                                    Easy content updates & clear calls to action
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="#websites" data-route="websites" class="nav-link inline-flex items-center font-semibold text-brand-600 hover:text-brand-700 group">
+                            View Website Services & Packages
+                            <svg class="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- Pillar 2 Card: Small Systems -->
+                    <div class="bg-white rounded-2xl p-8 sm:p-10 border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-brand-200 transition-all duration-300 flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-slate-900 text-brand-400 flex items-center justify-center mb-6">
+                                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-bold text-slate-900 mb-3">Tailored Small Systems</h3>
+                            <p class="text-slate-600 leading-relaxed mb-6">
+                                Custom lightweight web applications that automate repetitive daily tasks—built around your exact workflow without complex enterprise licensing.
+                            </p>
+                            <ul class="space-y-2.5 text-sm text-slate-700 mb-8">
+                                <li class="flex items-center gap-2.5">
+                                    <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs font-bold">✓</span>
+                                    Internal admin dashboards & KPI trackers
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs font-bold">✓</span>
+                                    Booking, appointment & scheduling portals
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <span class="w-5 h-5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-xs font-bold">✓</span>
+                                    Inventory, order & client management tools
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="#systems" data-route="systems" class="nav-link inline-flex items-center font-semibold text-brand-600 hover:text-brand-700 group">
+                            Explore Small Systems
+                            <svg class="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Bottom Quick Highlights Strip -->
+                <div class="mt-16 bg-slate-900 rounded-2xl p-8 sm:p-10 text-white grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                    <div>
+                        <div class="text-brand-400 font-semibold text-sm uppercase tracking-wider mb-1">Direct Collaboration</div>
+                        <h4 class="text-xl font-bold">Built With You, Not Just For You</h4>
+                        <p class="text-slate-400 text-sm mt-2">Clear communication from day one with direct access to your developer.</p>
+                    </div>
+                    <div>
+                        <div class="text-brand-400 font-semibold text-sm uppercase tracking-wider mb-1">Fast Turnaround</div>
+                        <h4 class="text-xl font-bold">Weeks, Not Months</h4>
+                        <p class="text-slate-400 text-sm mt-2">Focused scope and modern tooling mean rapid deployment for your business.</p>
+                    </div>
+                    <div class="md:text-right">
+                        <a href="#contact" data-route="contact" class="nav-link inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold text-sm shadow-lg transition-all">
+                            Start a Project Inquiry
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================================
+             PAGE 2: WEBSITES
+        ====================================================================== -->
+        <section id="page-websites" class="page-view hidden">
+            <!-- Page Header Banner -->
+            <div class="bg-slate-950 text-white py-16 sm:py-20 border-b border-slate-800">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <span class="inline-block px-3 py-1 rounded-lg bg-brand-500/15 text-brand-400 text-xs font-semibold uppercase tracking-wider mb-4">
+                        Web Development Services
+                    </span>
+                    <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4">Websites Built to Convert & Perform</h1>
+                    <p class="text-slate-300 text-lg max-w-2xl leading-relaxed">
+                        Your website is often the first impression customers have of your company. Talbi Systems crafts clean, blazing-fast websites tailored to your brand and business goals.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Website Services Grid -->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-8">What We Build</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
+                    <!-- Service 1 -->
+                    <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+                        <div class="w-10 h-10 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center font-bold mb-4">01</div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">High-Converting Landing Pages</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Focused single-page sites ideal for product launches, local services, and marketing campaigns with clear calls to action.
+                        </p>
+                    </div>
+                    <!-- Service 2 -->
+                    <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+                        <div class="w-10 h-10 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center font-bold mb-4">02</div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Corporate & Multi-Page Websites</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Structured company websites with dedicated service pages, portfolios, team profiles, and integrated lead-capture forms.
+                        </p>
+                    </div>
+                    <!-- Service 3 -->
+                    <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+                        <div class="w-10 h-10 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center font-bold mb-4">03</div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">E-Commerce & Catalogs</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Streamlined online storefronts and product catalogs with intuitive filtering, mobile checkout, and easy inventory updates.
+                        </p>
+                    </div>
+                    <!-- Service 4 -->
+                    <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+                        <div class="w-10 h-10 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center font-bold mb-4">04</div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Responsive Mobile-First Design</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Every layout adapts seamlessly across smartphones, tablets, and desktop monitors so every visitor gets an effortless experience.
+                        </p>
+                    </div>
+                    <!-- Service 5 -->
+                    <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+                        <div class="w-10 h-10 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center font-bold mb-4">05</div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">SEO & Speed Optimization</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Clean semantic code, fast load times, and technical SEO best practices to help local and global customers find you on search engines.
+                        </p>
+                    </div>
+                    <!-- Service 6 -->
+                    <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
+                        <div class="w-10 h-10 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center font-bold mb-4">06</div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Ongoing Care & Hosting Setup</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Complete domain, SSL security, and deployment setup—plus reliable ongoing support whenever you need updates.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Transparent Packages -->
+                <div class="mb-16">
+                    <div class="text-center max-w-2xl mx-auto mb-12">
+                        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-3">Transparent Website Packages</h2>
+                        <p class="text-slate-600">Straightforward options tailored to your stage of growth. Need something custom? We'll scope it together.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        <!-- Package 1 -->
+                        <div class="bg-white rounded-2xl p-8 border border-slate-200 flex flex-col justify-between">
+                            <div>
+                                <div class="text-sm font-semibold text-brand-600 uppercase tracking-wide mb-2">Starter Presence</div>
+                                <h3 class="text-2xl font-bold text-slate-900 mb-2">Business Landing Page</h3>
+                                <p class="text-slate-600 text-sm mb-6">Ideal for new businesses, consultants, and local service providers.</p>
+                                <ul class="space-y-3 text-sm text-slate-700 border-t border-slate-100 pt-6 mb-8">
+                                    <li class="flex items-center gap-2"><span class="text-brand-600 font-bold">✓</span> Custom single-page responsive design</li>
+                                    <li class="flex items-center gap-2"><span class="text-brand-600 font-bold">✓</span> Direct contact & inquiry integration</li>
+                                    <li class="flex items-center gap-2"><span class="text-brand-600 font-bold">✓</span> Basic SEO & performance tuning</li>
+                                    <li class="flex items-center gap-2"><span class="text-brand-600 font-bold">✓</span> Domain & SSL launch assistance</li>
+                                </ul>
+                            </div>
+                            <a href="#contact" data-route="contact" data-preset="Website" class="nav-link w-full py-3 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-900 font-semibold text-sm text-center transition-colors">
+                                Request Starter Quote
+                            </a>
+                        </div>
+
+                        <!-- Package 2 (Featured) -->
+                        <div class="bg-slate-900 text-white rounded-2xl p-8 border-2 border-brand-500 shadow-xl relative flex flex-col justify-between">
+                            <span class="absolute -top-3.5 right-6 px-3 py-1 rounded-full bg-brand-600 text-white text-xs font-bold uppercase tracking-wider">
+                                Most Popular
+                            </span>
+                            <div>
+                                <div class="text-sm font-semibold text-brand-400 uppercase tracking-wide mb-2">Growth Standard</div>
+                                <h3 class="text-2xl font-bold text-white mb-2">Multi-Page Business Site</h3>
+                                <p class="text-slate-300 text-sm mb-6">Complete brand presence with dedicated pages for each service you offer.</p>
+                                <ul class="space-y-3 text-sm text-slate-200 border-t border-slate-800 pt-6 mb-8">
+                                    <li class="flex items-center gap-2"><span class="text-brand-400 font-bold">✓</span> Up to 6 custom-designed pages</li>
+                                    <li class="flex items-center gap-2"><span class="text-brand-400 font-bold">✓</span> Interactive forms & map/social integration</li>
+                                    <li class="flex items-center gap-2"><span class="text-brand-400 font-bold">✓</span> On-page SEO structure & speed optimization</li>
+                                    <li class="flex items-center gap-2"><span class="text-brand-400 font-bold">✓</span> 30 days of post-launch support included</li>
+                                </ul>
+                            </div>
+                            <a href="#contact" data-route="contact" data-preset="Website" class="nav-link w-full py-3.5 px-4 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold text-sm text-center shadow-lg shadow-brand-600/25 transition-colors">
+                                Request Business Quote
+                            </a>
+                        </div>
+
+                        <!-- Package 3 -->
+                        <div class="bg-white rounded-2xl p-8 border border-slate-200 flex flex-col justify-between">
+                            <div>
+                                <div class="text-sm font-semibold text-brand-600 uppercase tracking-wide mb-2">Full Scale</div>
+                                <h3 class="text-2xl font-bold text-slate-900 mb-2">E-Commerce & Custom Web</h3>
+                                <p class="text-slate-600 text-sm mb-6">For businesses selling products online or needing custom web features.</p>
+                                <ul class="space-y-3 text-sm text-slate-700 border-t border-slate-100 pt-6 mb-8">
+                                    <li class="flex items-center gap-2"><span class="text-brand-600 font-bold">✓</span> Product catalog & checkout setup</li>
+                                    <li class="flex items-center gap-2"><span class="text-brand-600 font-bold">✓</span> Custom interactive calculators or portals</li>
+                                    <li class="flex items-center gap-2"><span class="text-brand-600 font-bold">✓</span> Analytics & conversion tracking</li>
+                                    <li class="flex items-center gap-2"><span class="text-brand-600 font-bold">✓</span> Priority support & training session</li>
+                                </ul>
+                            </div>
+                            <a href="#contact" data-route="contact" data-preset="Both" class="nav-link w-full py-3 px-4 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-900 font-semibold text-sm text-center transition-colors">
+                                Discuss Custom Project
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================================
+             PAGE 3: SMALL SYSTEMS
+        ====================================================================== -->
+        <section id="page-systems" class="page-view hidden">
+            <!-- Page Header Banner -->
+            <div class="bg-slate-950 text-white py-16 sm:py-20 border-b border-slate-800">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <span class="inline-block px-3 py-1 rounded-lg bg-brand-500/15 text-brand-400 text-xs font-semibold uppercase tracking-wider mb-4">
+                        Custom Business Software
+                    </span>
+                    <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4">Small Systems That Save Hours Every Week</h1>
+                    <p class="text-slate-300 text-lg max-w-2xl leading-relaxed">
+                        Off-the-shelf software is often bloated and expensive. Talbi Systems builds lightweight, focused web systems tailored specifically to your daily operations.
+                    </p>
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <!-- Use Cases Grid -->
+                <div class="mb-20">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 mb-3">Practical Systems We Build</h2>
+                    <p class="text-slate-600 mb-10 max-w-2xl">Designed to run smoothly in any web browser on desktop or mobile—no complicated installations required.</p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <!-- System Card 1 -->
+                        <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:border-brand-300 transition-colors">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">
+                                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-bold text-slate-900">Internal Dashboards & Reporting</h3>
+                            </div>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                Consolidate your daily metrics, sales figures, and team tasks into one clean visual command center instead of juggling multiple spreadsheets.
+                            </p>
+                            <div class="text-xs font-medium text-slate-500 bg-slate-50 px-3.5 py-2 rounded-lg border border-slate-100">
+                                Ideal for: Managers, agency owners, and operations leads
+                            </div>
+                        </div>
+
+                        <!-- System Card 2 -->
+                        <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:border-brand-300 transition-colors">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">
+                                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-bold text-slate-900">Booking & Scheduling Systems</h3>
+                            </div>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                Let clients or staff book appointments, reserve equipment, or schedule service calls with automated availability rules and instant confirmations.
+                            </p>
+                            <div class="text-xs font-medium text-slate-500 bg-slate-50 px-3.5 py-2 rounded-lg border border-slate-100">
+                                Ideal for: Clinics, workshops, consultants, and rental businesses
+                            </div>
+                        </div>
+
+                        <!-- System Card 3 -->
+                        <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:border-brand-300 transition-colors">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">
+                                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-bold text-slate-900">Inventory & Client Trackers</h3>
+                            </div>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                Keep real-time tabs on stock levels, supplier orders, or active customer projects with low-stock alerts and searchable history logs.
+                            </p>
+                            <div class="text-xs font-medium text-slate-500 bg-slate-50 px-3.5 py-2 rounded-lg border border-slate-100">
+                                Ideal for: Retailers, local warehouses, and service contractors
+                            </div>
+                        </div>
+
+                        <!-- System Card 4 -->
+                        <div class="bg-white rounded-2xl p-8 border border-slate-200 shadow-sm hover:border-brand-300 transition-colors">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">
+                                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-bold text-slate-900">Client Portals & Workflow Automation</h3>
+                            </div>
+                            <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                                Give your customers a dedicated portal to submit requests, track order status, or download invoices while automating repetitive admin steps.
+                            </p>
+                            <div class="text-xs font-medium text-slate-500 bg-slate-50 px-3.5 py-2 rounded-lg border border-slate-100">
+                                Ideal for: B2B services, accountants, and logistics teams
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- How We Build Process -->
+                <div class="bg-white rounded-2xl p-8 sm:p-12 border border-slate-200 shadow-sm">
+                    <h2 class="text-2xl font-bold text-slate-900 mb-8 text-center">Our 3-Step System Delivery Process</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="w-12 h-12 rounded-full bg-slate-900 text-white font-bold flex items-center justify-center mx-auto mb-4">1</div>
+                            <h3 class="font-bold text-slate-900 mb-2">Workflow Mapping</h3>
+                            <p class="text-sm text-slate-600">You tell us what slows your team down. We map out a simple, clutter-free solution.</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-12 h-12 rounded-full bg-brand-600 text-white font-bold flex items-center justify-center mx-auto mb-4">2</div>
+                            <h3 class="font-bold text-slate-900 mb-2">Rapid Build & Preview</h3>
+                            <p class="text-sm text-slate-600">We build an interactive working version quickly so you can test it with real business data.</p>
+                        </div>
+                        <div class="text-center">
+                            <div class="w-12 h-12 rounded-full bg-slate-900 text-white font-bold flex items-center justify-center mx-auto mb-4">3</div>
+                            <h3 class="font-bold text-slate-900 mb-2">Launch & Handover</h3>
+                            <p class="text-sm text-slate-600">We deploy your system securely, onboard your staff, and remain on call for future tweaks.</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-10 pt-8 border-t border-slate-100 text-center">
+                        <a href="#contact" data-route="contact" data-preset="Small System" class="nav-link inline-flex items-center justify-center px-6 py-3.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold text-sm shadow-md transition-all">
+                            Tell Us About Your Workflow
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =====================================================================
+             PAGE 4: CONTACT
+        ====================================================================== -->
+        <section id="page-contact" class="page-view hidden">
+            <!-- Page Header Banner -->
+            <div class="bg-slate-950 text-white py-16 sm:py-20 border-b border-slate-800">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <span class="inline-block px-3 py-1 rounded-lg bg-brand-500/15 text-brand-400 text-xs font-semibold uppercase tracking-wider mb-4">
+                        Get In Touch
+                    </span>
+                    <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4">Let’s Build Something Useful</h1>
+                    <p class="text-slate-300 text-lg max-w-2xl leading-relaxed">
+                        Have a website in mind or a daily business task you want automated? Reach out directly via email or send us a quick project note below.
+                    </p>
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+
+                    <!-- Left Column: Direct Email Card -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <div class="bg-slate-900 text-white rounded-2xl p-8 border border-slate-800 shadow-xl">
+                            <div class="inline-flex items-center gap-2 text-brand-400 text-xs font-semibold uppercase tracking-wider mb-3">
+                                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                </svg>
+                                Direct Email Contact
+                            </div>
+                            <h2 class="text-2xl font-bold mb-2">Email Us Directly</h2>
+                            <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+                                Prefer using your own email client? Reach us anytime at our official inbox. We typically reply within one business day.
+                            </p>
+
+                            <!-- Prominent Email Box -->
+                            <div class="bg-slate-950/90 border border-slate-800 rounded-xl p-4 mb-5">
+                                <div class="text-xs text-slate-400 mb-1">Official Email Address</div>
+                                <a href="mailto:talbi.systems@gmail.com" class="text-lg sm:text-xl font-bold text-white hover:text-brand-400 transition-colors break-all">
+                                    talbi.systems@gmail.com
+                                </a>
+                            </div>
+
+                            <!-- Action Buttons: Copy & Mailto -->
+                            <div class="flex flex-col sm:flex-row gap-3">
+                                <button id="copy-email-btn" type="button" class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-semibold text-sm border border-slate-700 transition-all cursor-pointer">
+                                    <svg id="copy-icon" class="w-4 h-4 text-brand-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                                    </svg>
+                                    <span id="copy-btn-text">Copy Email</span>
+                                </button>
+                                <a href="mailto:talbi.systems@gmail.com?subject=Project%20Inquiry%20-%20Talbi%20Systems" class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold text-sm shadow-lg shadow-brand-600/20 transition-all">
+                                    <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                    </svg>
+                                    Open Mail App
+                                </a>
+                            </div>
+
+                            <!-- Copy Confirmation Toast Message -->
+                            <div id="copy-feedback" class="hidden mt-3 text-xs font-medium text-emerald-400 bg-emerald-950/60 border border-emerald-800/60 rounded-lg px-3 py-2 text-center">
+                                ✓ Copied talbi.systems@gmail.com to clipboard!
+                            </div>
+                        </div>
+
+                        <!-- Quick FAQ / Reassurance -->
+                        <div class="bg-white rounded-2xl p-6 border border-slate-200">
+                            <h3 class="font-bold text-slate-900 mb-3">What happens after you reach out?</h3>
+                            <ul class="space-y-2.5 text-sm text-slate-600">
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-brand-600 font-bold mt-0.5">1.</span>
+                                    <span>We review your message and respond within 24 hours.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-brand-600 font-bold mt-0.5">2.</span>
+                                    <span>We provide a clear scope, timeline, and honest quote—no obligation.</span>
+                                </li>
+                                <li class="flex items-start gap-2.5">
+                                    <span class="text-brand-600 font-bold mt-0.5">3.</span>
+                                    <span>Once approved, we start building right away.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Interactive Inquiry Form -->
+                    <div class="lg:col-span-7">
+                        <div class="bg-white rounded-2xl p-8 sm:p-10 border border-slate-200 shadow-sm">
+                            <h2 class="text-2xl font-bold text-slate-900 mb-2">Send a Project Inquiry</h2>
+                            <p class="text-slate-600 text-sm mb-8">
+                                Fill out the details below and we’ll prepare your inquiry to send directly to <span class="font-semibold text-slate-800">talbi.systems@gmail.com</span>.
+                            </p>
+
+                            <!-- Form Element -->
+                            <form id="inquiry-form" class="space-y-5">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                    <div>
+                                        <label for="input-name" class="block text-sm font-semibold text-slate-700 mb-1.5">Your Name *</label>
+                                        <input type="text" id="input-name" name="name" required placeholder="Alex Morgan" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-all">
+                                    </div>
+                                    <div>
+                                        <label for="input-business" class="block text-sm font-semibold text-slate-700 mb-1.5">Business Name</label>
+                                        <input type="text" id="input-business" name="business" placeholder="Morgan Logistics Ltd." class="w-full px-4 py-3 rounded-xl border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-all">
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                    <div>
+                                        <label for="input-email" class="block text-sm font-semibold text-slate-700 mb-1.5">Your Email *</label>
+                                        <input type="email" id="input-email" name="email" required placeholder="alex@company.com" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-all">
+                                    </div>
+                                    <div>
+                                        <label for="input-service" class="block text-sm font-semibold text-slate-700 mb-1.5">Service Interest *</label>
+                                        <select id="input-service" name="service" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-slate-900 bg-white focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-all">
+                                            <option value="Website">Website Development</option>
+                                            <option value="Small System">Small Business System</option>
+                                            <option value="Both">Both (Website + Small System)</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label for="input-message" class="block text-sm font-semibold text-slate-700 mb-1.5">Project Details *</label>
+                                    <textarea id="input-message" name="message" rows="4" required placeholder="Tell us briefly about what you need (e.g. a new company website, an appointment booking tool, or an inventory tracker)..." class="w-full px-4 py-3 rounded-xl border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-all"></textarea>
+                                </div>
+
+                                <button type="submit" class="w-full py-3.5 px-6 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold text-base shadow-lg shadow-brand-600/20 transition-all cursor-pointer">
+                                    Prepare & Send Inquiry
+                                </button>
+                            </form>
+
+                            <!-- Clean Confirmation State (Hidden until submitted) -->
+                            <div id="form-confirmation" class="hidden mt-6 bg-emerald-50 border border-emerald-200 rounded-2xl p-6">
+                                <div class="flex items-start gap-3">
+                                    <div class="w-8 h-8 rounded-full bg-emerald-600 text-white flex items-center justify-center shrink-0 font-bold">✓</div>
+                                    <div>
+                                        <h3 class="text-lg font-bold text-emerald-950">Inquiry Ready for Talbi Systems!</h3>
+                                        <p class="text-sm text-emerald-800 mt-1 leading-relaxed">
+                                            We've formatted your message and opened your default email app addressed to <strong>talbi.systems@gmail.com</strong>. If your mail app didn't open automatically, use the button below:
+                                        </p>
+                                        <div class="mt-4 flex flex-wrap gap-3">
+                                            <a id="manual-mailto-link" href="mailto:talbi.systems@gmail.com" class="inline-flex items-center px-4 py-2 rounded-xl bg-emerald-700 hover:bg-emerald-600 text-white text-sm font-semibold transition-colors">
+                                                Launch Email Client
+                                            </a>
+                                            <button id="reset-form-btn" type="button" class="inline-flex items-center px-4 py-2 rounded-xl bg-white hover:bg-emerald-100 text-emerald-900 border border-emerald-300 text-sm font-medium transition-colors cursor-pointer">
+                                                Edit / Send Another
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 text-slate-400 border-t border-slate-800/80 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-8 border-b border-slate-800/80">
+                <!-- Footer Brand -->
+                <div>
+                    <a href="#home" data-route="home" class="nav-link inline-flex items-center gap-2.5 text-white font-bold text-lg mb-2">
+                        <span class="w-7 h-7 rounded-lg bg-brand-600 flex items-center justify-center text-xs font-extrabold">TS</span>
+                        <span>Talbi <span class="text-brand-400">Systems</span></span>
+                    </a>
+                    <p class="text-sm text-slate-400 max-w-sm">
+                        Modern websites and small, efficient software systems built to help businesses operate smoothly.
+                    </p>
+                </div>
+
+                <!-- Footer Quick Navigation -->
+                <div class="flex flex-wrap gap-6 text-sm font-medium">
+                    <a href="#home" data-route="home" class="nav-link hover:text-white transition-colors">Home</a>
+                    <a href="#websites" data-route="websites" class="nav-link hover:text-white transition-colors">Websites</a>
+                    <a href="#systems" data-route="systems" class="nav-link hover:text-white transition-colors">Small Systems</a>
+                    <a href="#contact" data-route="contact" class="nav-link hover:text-white transition-colors">Contact</a>
+                </div>
+
+                <!-- Footer Direct Email -->
+                <div class="text-sm">
+                    <div class="text-slate-500 text-xs uppercase tracking-wider mb-1">Direct Contact</div>
+                    <a href="mailto:talbi.systems@gmail.com" class="text-white hover:text-brand-400 font-semibold transition-colors">
+                        talbi.systems@gmail.com
+                    </a>
+                </div>
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+                <p>&copy; <span id="current-year"></span> Talbi Systems. All rights reserved.</p>
+                <p>Websites &amp; Tailored Business Software</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Application Logic: Hash Routing, Smooth Page Transitions, Clipboard & Form Handling -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set dynamic copyright year
+            const yearEl = document.getElementById('current-year');
+            if (yearEl) {
+                yearEl.textContent = new Date().getFullYear();
+            }
+
+            // Valid page routes
+            const VALID_ROUTES = ['home', 'websites', 'systems', 'contact'];
+            const appContent = document.getElementById('app-content');
+            const pageSections = document.querySelectorAll('.page-view');
+            const desktopNavItems = document.querySelectorAll('.nav-item');
+            const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
+
+            // Mobile menu elements
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIconOpen = document.getElementById('menu-icon-open');
+            const menuIconClose = document.getElementById('menu-icon-close');
+
+            /**
+             * Toggles mobile navigation drawer visibility
+             */
+            function setMobileMenu(isOpen) {
+                if (isOpen) {
+                    mobileMenu.classList.remove('hidden');
+                    menuIconOpen.classList.add('hidden');
+                    menuIconClose.classList.remove('hidden');
+                    mobileMenuBtn.setAttribute('aria-expanded', 'true');
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    menuIconOpen.classList.remove('hidden');
+                    menuIconClose.classList.add('hidden');
+                    mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                }
+            }
+
+            mobileMenuBtn.addEventListener('click', () => {
+                const isCurrentlyClosed = mobileMenu.classList.contains('hidden');
+                setMobileMenu(isCurrentlyClosed);
+            });
+
+            /**
+             * Updates active state styling for desktop and mobile navigation links
+             */
+            function updateActiveNav(route) {
+                desktopNavItems.forEach((item) => {
+                    const itemRoute = item.getAttribute('data-route');
+                    if (itemRoute === 'contact') return; // Contact button keeps CTA style
+
+                    if (itemRoute === route) {
+                        item.classList.add('bg-slate-800', 'text-white');
+                        item.classList.remove('text-slate-300');
+                    } else {
+                        item.classList.remove('bg-slate-800', 'text-white');
+                        item.classList.add('text-slate-300');
+                    }
+                });
+
+                mobileNavItems.forEach((item) => {
+                    const itemRoute = item.getAttribute('data-route');
+                    if (itemRoute === 'contact') return;
+
+                    if (itemRoute === route) {
+                        item.classList.add('bg-slate-800', 'text-white');
+                        item.classList.remove('text-slate-300');
+                    } else {
+                        item.classList.remove('bg-slate-800', 'text-white');
+                        item.classList.add('text-slate-300');
+                    }
+                });
+            }
+
+            /**
+             * Switches visible page section with a smooth fade transition
+             */
+            function navigateTo(route, presetService = null) {
+                const targetRoute = VALID_ROUTES.includes(route) ? route : 'home';
+
+                // Close mobile menu on navigation
+                setMobileMenu(false);
+
+                // Subtle fade-out transition
+                appContent.classList.add('opacity-0');
+
+                setTimeout(() => {
+                    pageSections.forEach((section) => {
+                        if (section.id === `page-${targetRoute}`) {
+                            section.classList.remove('hidden');
+                            section.classList.add('block');
+                        } else {
+                            section.classList.add('hidden');
+                            section.classList.remove('block');
+                        }
+                    });
+
+                    // Pre-select service interest if coming from a specific package CTA
+                    if (targetRoute === 'contact' && presetService) {
+                        const serviceSelect = document.getElementById('input-service');
+                        if (serviceSelect) {
+                            serviceSelect.value = presetService;
+                        }
+                    }
+
+                    updateActiveNav(targetRoute);
+                    window.scrollTo({ top: 0, behavior: 'instant' });
+
+                    // Fade back in
+                    appContent.classList.remove('opacity-0');
+                }, 150);
+            }
+
+            // Attach click handlers to all navigation links
+            document.querySelectorAll('.nav-link').forEach((link) => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const route = link.getAttribute('data-route') || 'home';
+                    const preset = link.getAttribute('data-preset') || null;
+
+                    if (window.location.hash !== `#${route}`) {
+                        window.location.hash = route;
+                    }
+                    navigateTo(route, preset);
+                });
+            });
+
+            // Listen to browser back/forward hash changes
+            window.addEventListener('hashchange', () => {
+                const currentHash = window.location.hash.replace('#', '').toLowerCase();
+                navigateTo(currentHash || 'home');
+            });
+
+            // Initial page load route resolution
+            const initialHash = window.location.hash.replace('#', '').toLowerCase();
+            if (initialHash && VALID_ROUTES.includes(initialHash)) {
+                navigateTo(initialHash);
+            } else {
+                updateActiveNav('home');
+            }
+
+            // =================================================================
+            // One-Click Copy Email Functionality (iFrame-safe fallback included)
+            // =================================================================
+            const copyEmailBtn = document.getElementById('copy-email-btn');
+            const copyBtnText = document.getElementById('copy-btn-text');
+            const copyFeedback = document.getElementById('copy-feedback');
+            const EMAIL_ADDRESS = 'talbi.systems@gmail.com';
+
+            if (copyEmailBtn) {
+                copyEmailBtn.addEventListener('click', () => {
+                    // Use temporary textarea + execCommand for reliable clipboard copying inside iframes
+                    const tempInput = document.createElement('textarea');
+                    tempInput.value = EMAIL_ADDRESS;
+                    tempInput.setAttribute('readonly', '');
+                    tempInput.style.position = 'absolute';
+                    tempInput.style.left = '-9999px';
+                    document.body.appendChild(tempInput);
+                    tempInput.select();
+
+                    try {
+                        document.execCommand('copy');
+                        copyBtnText.textContent = 'Copied!';
+                        copyFeedback.classList.remove('hidden');
+
+                        setTimeout(() => {
+                            copyBtnText.textContent = 'Copy Email';
+                            copyFeedback.classList.add('hidden');
+                        }, 3000);
+                    } catch (err) {
+                        copyBtnText.textContent = 'Select & Copy';
+                    } finally {
+                        document.body.removeChild(tempInput);
+                    }
+                });
+            }
+
+            // =================================================================
+            // Interactive Contact / Inquiry Form Handler
+            // =================================================================
+            const inquiryForm = document.getElementById('inquiry-form');
+            const formConfirmation = document.getElementById('form-confirmation');
+            const manualMailtoLink = document.getElementById('manual-mailto-link');
+            const resetFormBtn = document.getElementById('reset-form-btn');
+
+            if (inquiryForm) {
+                inquiryForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    const name = document.getElementById('input-name').value.trim();
+                    const business = document.getElementById('input-business').value.trim() || 'Not specified';
+                    const email = document.getElementById('input-email').value.trim();
+                    const service = document.getElementById('input-service').value;
+                    const message = document.getElementById('input-message').value.trim();
+
+                    const subject = encodeURIComponent(`[Talbi Systems Inquiry] ${service} — ${name}`);
+                    const body = encodeURIComponent(
+                        `Hello Talbi Systems,\n\n` +
+                        `Name: ${name}\n` +
+                        `Business Name: ${business}\n` +
+                        `Contact Email: ${email}\n` +
+                        `Service Interest: ${service}\n\n` +
+                        `Project Details:\n${message}\n`
+                    );
+
+                    const mailtoHref = `mailto:${EMAIL_ADDRESS}?subject=${subject}&body=${body}`;
+                    manualMailtoLink.setAttribute('href', mailtoHref);
+
+                    // Show clean confirmation card
+                    inquiryForm.classList.add('hidden');
+                    formConfirmation.classList.remove('hidden');
+
+                    // Attempt to launch default mail client
+                    window.location.href = mailtoHref;
+                });
+            }
+
+            if (resetFormBtn) {
+                resetFormBtn.addEventListener('click', () => {
+                    formConfirmation.classList.add('hidden');
+                    inquiryForm.classList.remove('hidden');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
